@@ -114,8 +114,8 @@ class GoogleOAuthenticator(OAuthenticator, GoogleOAuth2Mixin):
                     "You are not signed in to your {} account.".format(
                         self.hosted_domain)
                 )
-            else:
-                username = username.split('@')[0]
+
+        username = username.split('@')[0].replace('.','')
 
         return username
 
